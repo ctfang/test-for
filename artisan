@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+define('LARAVEL_START', microtime(true));
+define('APP_ROOT_PATH', __DIR__);
+
+$app = include "bootstrap/app.php";
+
+$app->initConsole();
+
+$app->run();
+
+
+
+
+
+
+

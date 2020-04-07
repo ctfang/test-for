@@ -1,0 +1,6 @@
+*.log
+.env
+.idea/
+/docker-compose.yml
+vendor/
+.git
