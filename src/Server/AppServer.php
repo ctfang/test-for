@@ -72,6 +72,14 @@ class AppServer
     }
 
     /**
+     * init console
+     */
+    public function initConsole()
+    {
+        $this->console->addCommands(include APP_ROOT_PATH."/app/Console/config.php");
+    }
+
+    /**
      * @throws \Exception
      */
     public function run()

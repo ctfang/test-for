@@ -5,10 +5,10 @@ namespace App\Console\Command;
 
 
 use App\App;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use WorkerApp\Http\HttpServer;
+use WorkerApp\Server\Command;
 
 /**
  * Class HttpCommand
@@ -16,13 +16,7 @@ use WorkerApp\Http\HttpServer;
  */
 class HttpCommand extends Command
 {
-    protected function configure()
-    {
-        $this
-            ->setName('http:start')
-            ->setDescription('启动http服务')
-        ;
-    }
+    protected $name = "http:start";
 
     /**
      * @param InputInterface $input
@@ -30,7 +24,7 @@ class HttpCommand extends Command
      * @return int|void
      * @throws \Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    public function handel(InputInterface $input, OutputInterface $output)
     {
         /** @var HttpServer $httpServer */
         $httpServer = App::getSelf()->getContainer()->get('HttpServer');

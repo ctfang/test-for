@@ -12,8 +12,5 @@ use WorkerApp\Server\AppServer;
  */
 class App extends AppServer
 {
-    public function initConsole()
-    {
-        $this->console->add(new HttpCommand());
-    }
+
 }

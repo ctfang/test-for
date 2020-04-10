@@ -2,7 +2,11 @@
 
 use Symfony\Component\Dotenv\Dotenv;
 
-(new Dotenv())->load(APP_ROOT_PATH.'/.env');
+$filePath = APP_ROOT_PATH.'/.env';
+
+if( file_exists($filePath) ){
+    (new Dotenv())->load($filePath);
+}
 
 function env()
 {
